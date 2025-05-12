@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\felip\\OneDrive\\Documentos\\Faculdade\\semestre3\\Challenge\\mototrack-backend-dotnet\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E5C18B50-146F-4018-B856-C20EE6ED95AE}|mototrack-backend-dotnet\\mototrack-backend-dotnet.csproj|c:\\users\\felip\\onedrive\\documentos\\faculdade\\semestre3\\challenge\\mototrack-backend-dotnet\\mototrack-backend-dotnet\\infrastructure\\appdata\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C18B50-146F-4018-B856-C20EE6ED95AE}|mototrack-backend-dotnet\\mototrack-backend-dotnet.csproj|solutionrelative:mototrack-backend-dotnet\\infrastructure\\appdata\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5C18B50-146F-4018-B856-C20EE6ED95AE}|mototrack-backend-dotnet\\mototrack-backend-dotnet.csproj|c:\\users\\felip\\onedrive\\documentos\\faculdade\\semestre3\\challenge\\mototrack-backend-dotnet\\mototrack-backend-dotnet\\domain\\interfaces\\iordemservicorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C18B50-146F-4018-B856-C20EE6ED95AE}|mototrack-backend-dotnet\\mototrack-backend-dotnet.csproj|solutionrelative:mototrack-backend-dotnet\\domain\\interfaces\\iordemservicorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E5C18B50-146F-4018-B856-C20EE6ED95AE}|mototrack-backend-dotnet\\mototrack-backend-dotnet.csproj|c:\\users\\felip\\onedrive\\documentos\\faculdade\\semestre3\\challenge\\mototrack-backend-dotnet\\mototrack-backend-dotnet\\domain\\entities\\ordemservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApplicationContext.cs",
-              "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\Faculdade\\semestre3\\Challenge\\mototrack-backend-dotnet\\mototrack-backend-dotnet\\Infrastructure\\AppData\\ApplicationContext.cs",
-              "RelativeDocumentMoniker": "mototrack-backend-dotnet\\Infrastructure\\AppData\\ApplicationContext.cs",
-              "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\Faculdade\\semestre3\\Challenge\\mototrack-backend-dotnet\\mototrack-backend-dotnet\\Infrastructure\\AppData\\ApplicationContext.cs",
-              "RelativeToolTip": "mototrack-backend-dotnet\\Infrastructure\\AppData\\ApplicationContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T21:04:32.947Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -41,9 +28,22 @@
               "RelativeDocumentMoniker": "mototrack-backend-dotnet\\Domain\\Entities\\OrdemServico.cs",
               "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\Faculdade\\semestre3\\Challenge\\mototrack-backend-dotnet\\mototrack-backend-dotnet\\Domain\\Entities\\OrdemServico.cs",
               "RelativeToolTip": "mototrack-backend-dotnet\\Domain\\Entities\\OrdemServico.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T16:45:22.278Z",
+              "WhenOpened": "2025-05-12T21:23:10.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IOrdemServicoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\Faculdade\\semestre3\\Challenge\\mototrack-backend-dotnet\\mototrack-backend-dotnet\\Domain\\Interfaces\\IOrdemServicoRepository.cs",
+              "RelativeDocumentMoniker": "mototrack-backend-dotnet\\Domain\\Interfaces\\IOrdemServicoRepository.cs",
+              "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\Faculdade\\semestre3\\Challenge\\mototrack-backend-dotnet\\mototrack-backend-dotnet\\Domain\\Interfaces\\IOrdemServicoRepository.cs",
+              "RelativeToolTip": "mototrack-backend-dotnet\\Domain\\Interfaces\\IOrdemServicoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T21:21:39.372Z",
               "EditorCaption": ""
             }
           ]
