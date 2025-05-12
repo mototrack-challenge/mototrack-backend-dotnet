@@ -4,12 +4,12 @@ namespace mototrack_backend_dotnet.Domain.Interfaces;
 
 public interface IOrdemServicoRepository
 {
-    IEnumerable<OrdemServico> GetAll();
-    IEnumerable<OrdemServico> GetByPlaca(string placa);
-    IEnumerable<OrdemServico> GetByStatus(StatusOrdem status);
-    OrdemServico? GetById(int id);
-    OrdemServico? Create(OrdemServico ordemServico);
-    OrdemServico? Update(int id, OrdemServico ordemServico);
-    OrdemServico? Delete(int id);
+    IEnumerable<OrdemServicoEntity> GetAll();
+    IEnumerable<OrdemServicoEntity> GetByPlaca(string placa);
+    IEnumerable<OrdemServicoEntity> GetByStatus(StatusOrdem status);
+    OrdemServicoEntity? GetById(int id);
+    OrdemServicoEntity? Create(OrdemServicoEntity ordemServico);
+    OrdemServicoEntity? Update(int id, OrdemServicoEntity ordemServico);
+    OrdemServicoEntity? Delete(int id);
 
 }

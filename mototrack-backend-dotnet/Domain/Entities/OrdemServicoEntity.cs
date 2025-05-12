@@ -7,7 +7,7 @@ public enum Prioridade { BAIXA, MEDIA, ALTA }
 public enum StatusOrdem { ABERTA, EM_ANDAMENTO, FINALIZADA }
 
 [Table("MT_ORDEMSERVICO")]
-public class OrdemServico
+public class OrdemServicoEntity
 {
     [Key]
     public int Id { get; set; }

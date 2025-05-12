@@ -9,5 +9,5 @@ public class ApplicationContext  : DbContext
     {
     }
 
-    public DbSet<OrdemServico> OrdemServico { get; set; }
+    public DbSet<OrdemServicoEntity> OrdemServico { get; set; }
 }

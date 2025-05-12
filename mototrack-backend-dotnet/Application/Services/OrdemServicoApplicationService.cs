@@ -12,34 +12,34 @@ public class OrdemServicoApplicationService : IOrdemServicoApplicationService
     {
         _repository = repository;
     }
-    public IEnumerable<OrdemServico> GetAll()
+    public IEnumerable<OrdemServicoEntity> GetAll()
     {
         return _repository.GetAll();
     }
-    public IEnumerable<OrdemServico> GetByPlaca(string placa)
+    public IEnumerable<OrdemServicoEntity> GetByPlaca(string placa)
     {
         return _repository.GetByPlaca(placa);
     }
 
-    public IEnumerable<OrdemServico> GetByStatus(StatusOrdem status)
+    public IEnumerable<OrdemServicoEntity> GetByStatus(StatusOrdem status)
     {
         return _repository.GetByStatus(status);
     }
-    public OrdemServico? GetById(int id)
+    public OrdemServicoEntity? GetById(int id)
     {
         return _repository.GetById(id);
     }
 
-    public OrdemServico? Create(OrdemServico ordemServico)
+    public OrdemServicoEntity? Create(OrdemServicoEntity ordemServico)
     {
         return _repository.Create(ordemServico);
     }
-    public OrdemServico? Update(int id, OrdemServico ordemServico)
+    public OrdemServicoEntity? Update(int id, OrdemServicoEntity ordemServico)
     {
         return _repository.Update(id, ordemServico);
     }
 
-    public OrdemServico? Delete(int id)
+    public OrdemServicoEntity? Delete(int id)
     {
         return _repository.Delete(id);
     }

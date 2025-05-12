@@ -12,13 +12,13 @@ public class OrdemServicoRepository : IOrdemServicoRepository
     {
         _context = context;
     }
-    public IEnumerable<OrdemServico> GetAll()
+    public IEnumerable<OrdemServicoEntity> GetAll()
     {
         var ordens = _context.OrdemServico.ToList();
 
         return ordens;
     }
-    public IEnumerable<OrdemServico> GetByPlaca(string placa)
+    public IEnumerable<OrdemServicoEntity> GetByPlaca(string placa)
     {
         var ordens = _context.OrdemServico
             .Where(o => o.PlacaMoto == placa)
@@ -27,7 +27,7 @@ public class OrdemServicoRepository : IOrdemServicoRepository
         return ordens;
     }
 
-    public IEnumerable<OrdemServico> GetByStatus(StatusOrdem status)
+    public IEnumerable<OrdemServicoEntity> GetByStatus(StatusOrdem status)
     {
         var ordens = _context.OrdemServico
             .Where(o => o.Status == status)
@@ -35,14 +35,14 @@ public class OrdemServicoRepository : IOrdemServicoRepository
 
         return ordens;
     }
-    public OrdemServico? GetById(int id)
+    public OrdemServicoEntity? GetById(int id)
     {
         var ordem = _context.OrdemServico.Find(id);
 
         return ordem;
     }
 
-    public OrdemServico? Create(OrdemServico ordemServico)
+    public OrdemServicoEntity? Create(OrdemServicoEntity ordemServico)
     {
         _context.OrdemServico.Add(ordemServico);
         _context.SaveChanges();
@@ -50,7 +50,7 @@ public class OrdemServicoRepository : IOrdemServicoRepository
         return ordemServico;
     }
 
-    public OrdemServico? Update(int id, OrdemServico ordemServico)
+    public OrdemServicoEntity? Update(int id, OrdemServicoEntity ordemServico)
     {
         var ordemExistente = _context.OrdemServico.Find(id);
 
@@ -69,7 +69,7 @@ public class OrdemServicoRepository : IOrdemServicoRepository
         return ordemExistente;
     }
 
-    public OrdemServico? Delete(int id)
+    public OrdemServicoEntity? Delete(int id)
     {
         var ordem = _context.OrdemServico.Find(id);
 
