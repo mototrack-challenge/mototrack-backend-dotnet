@@ -1,6 +1,20 @@
+using Microsoft.EntityFrameworkCore;
+using mototrack_backend_dotnet.Application.Interfaces;
+using mototrack_backend_dotnet.Application.Services;
+using mototrack_backend_dotnet.Domain.Interfaces;
+using mototrack_backend_dotnet.Infrastructure.AppData;
+using mototrack_backend_dotnet.Infrastructure.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<ApplicationContext>(option => {
+    option.UseOracle(builder.Configuration.GetConnectionString("Oracle"));
+});
+
+builder.Services.AddTransient<IOrdemServicoRepository, OrdemServicoRepository>();
+builder.Services.AddTransient<IOrdemServicoApplicationService, OrdemServicoApplicationService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
