@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\felipe.sora\\Documents\\faculdade\\challenge2025\\mototrack-backend-dotnet\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C18B50-146F-4018-B856-C20EE6ED95AE}|mototrack-backend-dotnet\\mototrack-backend-dotnet.csproj|c:\\users\\felipe.sora\\documents\\faculdade\\challenge2025\\mototrack-backend-dotnet\\mototrack-backend-dotnet\\domain\\entities\\ordemservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C18B50-146F-4018-B856-C20EE6ED95AE}|mototrack-backend-dotnet\\mototrack-backend-dotnet.csproj|solutionrelative:mototrack-backend-dotnet\\domain\\entities\\ordemservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +14,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrdemServico.cs",
+              "DocumentMoniker": "C:\\Users\\felipe.sora\\Documents\\faculdade\\challenge2025\\mototrack-backend-dotnet\\mototrack-backend-dotnet\\Domain\\Entities\\OrdemServico.cs",
+              "RelativeDocumentMoniker": "mototrack-backend-dotnet\\Domain\\Entities\\OrdemServico.cs",
+              "ToolTip": "C:\\Users\\felipe.sora\\Documents\\faculdade\\challenge2025\\mototrack-backend-dotnet\\mototrack-backend-dotnet\\Domain\\Entities\\OrdemServico.cs",
+              "RelativeToolTip": "mototrack-backend-dotnet\\Domain\\Entities\\OrdemServico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T16:45:22.278Z",
+              "EditorCaption": ""
             }
           ]
         }
