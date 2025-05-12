@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("mototrack-backend-dotnet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31376a95d30d154341897600633766c6c1322f0f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6fe5149426b0c5cfdfce4eaa62082feabaf079b")]
 [assembly: System.Reflection.AssemblyProductAttribute("mototrack-backend-dotnet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mototrack-backend-dotnet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
