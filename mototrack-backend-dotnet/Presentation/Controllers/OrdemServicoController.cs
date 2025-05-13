@@ -176,11 +176,15 @@ public class OrdemServicoController : ControllerBase
     /// - placaMoto
     /// 
     /// Exemplo de corpo (JSON):
-    /// {
-    ///   "nome": "João Silva",
-    ///   "email": "joao@email.com",
-    ///   "senha": "123456"
-    /// }
+    ///{
+    ///"descricao": "Arrumar motor da moto",
+    ///"prioridade": "MEDIA",
+    ///"status": "EM_ANDAMENTO",
+    ///"dataAbertura": "2025-05-13T21:59:20.953Z",
+    ///"dataFinalizacao": "2025-06-07T09:00:00.953Z",
+    ///"responsavel": "Felipe Sora",
+    ///"placaMoto": "ABC1234"
+    ///}
     /// </remarks>
     /// <param name="entity">Objeto com os dados da nova ordem de serviço.</param>
     /// <returns>Retorna 200 OK com a ordem cadastrado ou 400 Bad Request em caso de erro.</returns>
