@@ -162,4 +162,46 @@ public class OrdemServicoController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Cadastra uma nova ordem de serviço no sistema.
+    /// </summary>
+    /// <remarks>
+    /// Este endpoint recebe os dados de uma nova ordem de serviço e a registra no sistema. 
+    /// É necessário enviar um objeto JSON no corpo da requisição com os dados obrigatórios:
+    /// - descricao
+    /// - prioridade (BAIXA, MEDIA, ALTA)
+    /// - status (ABERTA, EM_ANDAMENTO, FINALIZADA)
+    /// - dataFinalizacao
+    /// - responsavel
+    /// - placaMoto
+    /// 
+    /// Exemplo de corpo (JSON):
+    /// {
+    ///   "nome": "João Silva",
+    ///   "email": "joao@email.com",
+    ///   "senha": "123456"
+    /// }
+    /// </remarks>
+    /// <param name="entity">Objeto com os dados da nova ordem de serviço.</param>
+    /// <returns>Retorna 200 OK com a ordem cadastrado ou 400 Bad Request em caso de erro.</returns>
+    /// <response code="200">Ordem cadastrada com sucesso.</response>
+    /// <response code="400">Erro ao tentar salvar a ordem.</response>
+    [HttpPost]
+    [ProducesResponseType(typeof(OrdemServicoEntity), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public IActionResult Salvar([FromBody] OrdemServicoEntity entity)
+    {
+        try
+        {
+            var ordem = _service.Create(entity);
+
+            return Ok(ordem);
+
+        }
+        catch (Exception ex)
+        {
+            return BadRequest($"Ocorreu uma falha ao tentar salvar esta ordem de serviço: {ex.Message}");
+        }
+    }
+
 }
