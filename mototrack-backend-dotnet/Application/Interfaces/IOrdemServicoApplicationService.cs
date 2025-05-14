@@ -1,14 +1,15 @@
-﻿using mototrack_backend_dotnet.Domain.Entities;
+﻿using mototrack_backend_dotnet.Application.DTOs;
+using mototrack_backend_dotnet.Domain.Entities;
 
 namespace mototrack_backend_dotnet.Application.Interfaces;
 
 public interface IOrdemServicoApplicationService
 {
-    IEnumerable<OrdemServicoEntity> GetAll();
-    IEnumerable<OrdemServicoEntity> GetByPlaca(string placa);
-    IEnumerable<OrdemServicoEntity> GetByStatus(StatusOrdem status);
-    OrdemServicoEntity? GetById(int id);
-    OrdemServicoEntity? Create(OrdemServicoEntity ordemServico);
-    OrdemServicoEntity? Update(int id, OrdemServicoEntity ordemServico);
-    OrdemServicoEntity? Delete(int id);
+    IEnumerable<OrdemServicoResponseDTO> GetAll();
+    IEnumerable<OrdemServicoResponseDTO> GetByPlaca(string placa);
+    IEnumerable<OrdemServicoResponseDTO> GetByStatus(StatusOrdem status);
+    OrdemServicoResponseDTO? GetById(int id);
+    OrdemServicoResponseDTO? Create(OrdemServicoCreateDTO ordemServico);
+    OrdemServicoResponseDTO? Update(int id, OrdemServicoCreateDTO ordemServico);
+    OrdemServicoResponseDTO? Delete(int id);
 }

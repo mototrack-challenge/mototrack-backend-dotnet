@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using mototrack_backend_dotnet.Application.DTOs;
 using mototrack_backend_dotnet.Application.Interfaces;
 using mototrack_backend_dotnet.Domain.Entities;
 
@@ -32,7 +33,7 @@ public class OrdemServicoController : ControllerBase
     /// <response code="204">Nenhuma ordem encontrada.</response>
     /// <response code="400">Erro ao tentar buscar as ordens de serviços.</response>
     [HttpGet]
-    [ProducesResponseType(typeof(IEnumerable<OrdemServicoEntity>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<OrdemServicoResponseDTO>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult GetAll()
@@ -68,7 +69,7 @@ public class OrdemServicoController : ControllerBase
     /// <response code="204">Nenhuma ordem encontrada para a placa informada.</response>
     /// <response code="400">Erro ao tentar buscar as ordens de serviços pela placa.</response>
     [HttpGet("placa/{placa}")]
-    [ProducesResponseType(typeof(IEnumerable<OrdemServicoEntity>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<OrdemServicoResponseDTO>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult GetByPlaca([FromRoute] string placa)
@@ -103,7 +104,7 @@ public class OrdemServicoController : ControllerBase
     /// <response code="204">Nenhuma ordem encontrada com o status informado.</response>
     /// <response code="400">Erro ao tentar buscar as ordens de serviços pelo status.</response>
     [HttpGet("status/{status}")]
-    [ProducesResponseType(typeof(IEnumerable<OrdemServicoEntity>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<OrdemServicoResponseDTO>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult GetByStatus([FromRoute] StatusOrdem status)
@@ -142,7 +143,7 @@ public class OrdemServicoController : ControllerBase
     /// <response code="400">Erro ao tentar buscar a ordem.</response>
     /// <param name="id">ID da ordem de serviço a ser consultado. Deve ser um número inteiro maior que zero.</param>
     [HttpGet("{id}")]
-    [ProducesResponseType(typeof(OrdemServicoEntity), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(OrdemServicoResponseDTO), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult GetById([FromRoute] int id)
@@ -195,9 +196,9 @@ public class OrdemServicoController : ControllerBase
     /// <response code="200">Ordem cadastrada com sucesso.</response>
     /// <response code="400">Erro ao tentar salvar a ordem.</response>
     [HttpPost]
-    [ProducesResponseType(typeof(OrdemServicoEntity), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(OrdemServicoResponseDTO), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult Create([FromBody] OrdemServicoEntity entity)
+    public IActionResult Create([FromBody] OrdemServicoCreateDTO entity)
     {
         try
         {
@@ -227,10 +228,10 @@ public class OrdemServicoController : ControllerBase
     /// <response code="404">Ordem de Serviço com o ID especificado não foi encontrada.</response>
     /// <response code="400">Erro ao tentar atualizar a ordem de serviço.</response>
     [HttpPut("{id}")]
-    [ProducesResponseType(typeof(OrdemServicoEntity), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(OrdemServicoResponseDTO), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult Update([FromRoute] int id, [FromBody] OrdemServicoEntity entity)
+    public IActionResult Update([FromRoute] int id, [FromBody] OrdemServicoCreateDTO entity)
     {
         try
         {
@@ -260,7 +261,7 @@ public class OrdemServicoController : ControllerBase
     /// <response code="404">Ordem de Serviço com o ID especificado não encontrada.</response>
     /// <response code="400">Erro ao tentar remover a ordem de serviço.</response>
     [HttpDelete("{id}")]
-    [ProducesResponseType(typeof(OrdemServicoEntity), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(OrdemServicoResponseDTO), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult Delete(int id)

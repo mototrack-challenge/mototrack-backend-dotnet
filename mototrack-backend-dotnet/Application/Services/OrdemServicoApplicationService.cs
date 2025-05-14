@@ -1,4 +1,5 @@
-﻿using mototrack_backend_dotnet.Application.Interfaces;
+﻿using mototrack_backend_dotnet.Application.DTOs;
+using mototrack_backend_dotnet.Application.Interfaces;
 using mototrack_backend_dotnet.Domain.Entities;
 using mototrack_backend_dotnet.Domain.Interfaces;
 
@@ -12,36 +13,79 @@ public class OrdemServicoApplicationService : IOrdemServicoApplicationService
     {
         _repository = repository;
     }
-    public IEnumerable<OrdemServicoEntity> GetAll()
+    public IEnumerable<OrdemServicoResponseDTO> GetAll()
     {
-        return _repository.GetAll();
+        return _repository.GetAll()
+            .Select(MapToResponseDto);
     }
-    public IEnumerable<OrdemServicoEntity> GetByPlaca(string placa)
+    public IEnumerable<OrdemServicoResponseDTO> GetByPlaca(string placa)
     {
-        return _repository.GetByPlaca(placa);
-    }
-
-    public IEnumerable<OrdemServicoEntity> GetByStatus(StatusOrdem status)
-    {
-        return _repository.GetByStatus(status);
-    }
-    public OrdemServicoEntity? GetById(int id)
-    {
-        return _repository.GetById(id);
+        return _repository.GetByPlaca(placa)
+            .Select(MapToResponseDto);
     }
 
-    public OrdemServicoEntity? Create(OrdemServicoEntity ordemServico)
+    public IEnumerable<OrdemServicoResponseDTO> GetByStatus(StatusOrdem status)
     {
-        return _repository.Create(ordemServico);
+        return _repository.GetByStatus(status)
+            .Select(MapToResponseDto);
     }
-    public OrdemServicoEntity? Update(int id, OrdemServicoEntity ordemServico)
+    public OrdemServicoResponseDTO? GetById(int id)
     {
-        return _repository.Update(id, ordemServico);
+        var entity = _repository.GetById(id);
+        return entity is null ? null : MapToResponseDto(entity);
     }
 
-    public OrdemServicoEntity? Delete(int id)
+    public OrdemServicoResponseDTO? Create(OrdemServicoCreateDTO dto)
     {
-        return _repository.Delete(id);
+        var entity = new OrdemServicoEntity
+        {
+            Descricao = dto.Descricao,
+            Prioridade = dto.Prioridade,
+            Status = dto.Status,
+            DataFinalizacao = dto.DataFinalizacao,
+            Responsavel = dto.Responsavel,
+            PlacaMoto = dto.PlacaMoto
+        };
+
+        var created = _repository.Create(entity);
+        return created is null ? null : MapToResponseDto(created);
+    }
+    public OrdemServicoResponseDTO? Update(int id, OrdemServicoCreateDTO dto)
+    {
+        var entity = new OrdemServicoEntity
+        {
+            Id = id,
+            Descricao = dto.Descricao,
+            Prioridade = dto.Prioridade,
+            Status = dto.Status,
+            DataFinalizacao = dto.DataFinalizacao,
+            Responsavel = dto.Responsavel,
+            PlacaMoto = dto.PlacaMoto
+        };
+
+        var updated = _repository.Update(id, entity);
+        return updated is null ? null : MapToResponseDto(updated);
+    }
+
+    public OrdemServicoResponseDTO? Delete(int id)
+    {
+        var deleted = _repository.Delete(id);
+        return deleted is null ? null : MapToResponseDto(deleted);
+    }
+
+    private static OrdemServicoResponseDTO MapToResponseDto(OrdemServicoEntity entity)
+    {
+        return new OrdemServicoResponseDTO
+        {
+            Id = entity.Id,
+            Descricao = entity.Descricao,
+            Prioridade = entity.Prioridade,
+            Status = entity.Status,
+            DataAbertura = entity.DataAbertura,
+            DataFinalizacao = entity.DataFinalizacao,
+            Responsavel = entity.Responsavel,
+            PlacaMoto = entity.PlacaMoto
+        };
     }
 }
 
