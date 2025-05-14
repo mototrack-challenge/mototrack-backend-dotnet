@@ -1,10 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using mototrack_backend_dotnet.Domain.Enums;
 
 namespace mototrack_backend_dotnet.Domain.Entities;
-
-public enum Prioridade { BAIXA, MEDIA, ALTA }
-public enum StatusOrdem { ABERTA, EM_ANDAMENTO, FINALIZADA }
 
 [Table("MT_ORDEMSERVICO")]
 public class OrdemServicoEntity

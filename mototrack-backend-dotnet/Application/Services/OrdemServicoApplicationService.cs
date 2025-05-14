@@ -1,6 +1,7 @@
 ﻿using mototrack_backend_dotnet.Application.DTOs;
 using mototrack_backend_dotnet.Application.Interfaces;
 using mototrack_backend_dotnet.Domain.Entities;
+using mototrack_backend_dotnet.Domain.Enums;
 using mototrack_backend_dotnet.Domain.Interfaces;
 
 namespace mototrack_backend_dotnet.Application.Services;

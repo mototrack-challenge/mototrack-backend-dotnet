@@ -1,4 +1,5 @@
 ﻿using mototrack_backend_dotnet.Domain.Entities;
+using mototrack_backend_dotnet.Domain.Enums;
 
 namespace mototrack_backend_dotnet.Application.DTOs;
 
