@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using mototrack_backend_dotnet.Application.Interfaces;
 using mototrack_backend_dotnet.Domain.Entities;
 
@@ -112,6 +110,9 @@ public class OrdemServicoController : ControllerBase
     {
         try
         {
+            if (!Enum.IsDefined(typeof(StatusOrdem), status))
+                return BadRequest("Status inválido fornecido.");
+
             var ordensStatus = _service.GetByStatus(status);
 
             if (!ordensStatus.Any())
@@ -148,6 +149,9 @@ public class OrdemServicoController : ControllerBase
     {
         try
         {
+            if (id <= 0)
+                return BadRequest("ID deve ser maior que zero.");
+
             var ordem = _service.GetById(id);
 
             if (ordem == null)
@@ -226,7 +230,7 @@ public class OrdemServicoController : ControllerBase
     [ProducesResponseType(typeof(OrdemServicoEntity), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult Editar([FromRoute] int id, [FromBody] OrdemServicoEntity entity)
+    public IActionResult Update([FromRoute] int id, [FromBody] OrdemServicoEntity entity)
     {
         try
         {
@@ -259,7 +263,7 @@ public class OrdemServicoController : ControllerBase
     [ProducesResponseType(typeof(OrdemServicoEntity), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult Deletar(int id)
+    public IActionResult Delete(int id)
     {
         try
         {
