@@ -193,7 +193,7 @@ public class OrdemServicoController : ControllerBase
     [HttpPost]
     [ProducesResponseType(typeof(OrdemServicoEntity), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult Salvar([FromBody] OrdemServicoEntity entity)
+    public IActionResult Create([FromBody] OrdemServicoEntity entity)
     {
         try
         {
@@ -205,6 +205,76 @@ public class OrdemServicoController : ControllerBase
         catch (Exception ex)
         {
             return BadRequest($"Ocorreu uma falha ao tentar salvar esta ordem de serviço: {ex.Message}");
+        }
+    }
+
+    /// <summary>
+    /// Atualiza os dados de uma ordem de serviço existente.
+    /// </summary>
+    /// <remarks>
+    /// Este endpoint permite atualizar as informações de uma ordem de serviço cadastrada no sistema.
+    /// O ID da ordem deve ser informado na rota e os novos dados devem ser enviados no corpo da requisição.
+    /// Retorna 404 caso a ordem não exista.
+    /// </remarks>
+    /// <param name="id">ID da ordem de serviço a ser atualizado. Deve ser um número inteiro maior que zero.</param>
+    /// <param name="entity">Objeto com os novos dados da ordem de serviço.</param>
+    /// <returns>Retorna a ordem de serviço atualizada ou uma mensagem de erro.</returns>
+    /// <response code="200">Ordem de Serviço atualizada com sucesso.</response>
+    /// <response code="404">Ordem de Serviço com o ID especificado não foi encontrada.</response>
+    /// <response code="400">Erro ao tentar atualizar a ordem de serviço.</response>
+    [HttpPut("{id}")]
+    [ProducesResponseType(typeof(OrdemServicoEntity), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public IActionResult Editar([FromRoute] int id, [FromBody] OrdemServicoEntity entity)
+    {
+        try
+        {
+            var ordemAtualizada = _service.Update(id, entity);
+
+            if (ordemAtualizada == null)
+                return NotFound($"Ordem de Serviço com ID {id} não encontrado.");
+
+            return Ok(ordemAtualizada);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest($"Ocorreu uma falha ao tentar editar esta ordem de serviço: {ex.Message}");
+        }
+    }
+
+    /// <summary>
+    /// Remove a ordem de serviço do sistema com o id especificado.
+    /// </summary>
+    /// <remarks>
+    /// Este endpoint remove uma ordem de serviço registrada no sistema, identificado pelo ID passado como parâmetro na rota.
+    /// Retorna 404 caso a ordem não seja encontrada.
+    /// </remarks>
+    /// <param name="id">ID da ordem de serviço a ser removida. Deve ser um número inteiro maior que zero.</param>
+    /// <returns>Retorna o status de sucesso ou falha dependendo do resultado da remoção.</returns>
+    /// <response code="200">Ordem de Serviço removida com sucesso.</response>
+    /// <response code="404">Ordem de Serviço com o ID especificado não encontrada.</response>
+    /// <response code="400">Erro ao tentar remover a ordem de serviço.</response>
+    [HttpDelete("{id}")]
+    [ProducesResponseType(typeof(OrdemServicoEntity), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public IActionResult Deletar(int id)
+    {
+        try
+        {
+            var ordem = _service.Delete(id);
+
+            if (ordem == null)
+                return NotFound($"Ordem de Serviço com ID {id} não encontrada.");
+
+            return Ok(ordem);
+
+
+        }
+        catch (Exception ex)
+        {
+            return BadRequest($"Ocorreu uma falha ao tentar remover esta ordem de serviço: {ex.Message}");
         }
     }
 
