@@ -186,3 +186,6 @@ dotnet ef database update
 ```
 
 4. Inicie o projeto
+
+### ✅ Pronto!
+Agora você pode testar todos os recursos do backend de .NET da MotoTrack!
